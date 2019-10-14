@@ -1,4 +1,4 @@
-" Configuration file for vim
+:" Configuration file for vim
 set modelines=0		" CVE-2007-2438
 
 " Normally we use vim-extensions. If you want true vi-compatibility
@@ -31,6 +31,7 @@ nnoremap <Leader>g :YcmCompleter GoTo<CR>
 
 Plugin 'The-NERD-tree'
 nmap <F1> :NERDTreeToggle<CR>
+imap <F1> <Esc>:NERDTreeToggle<CR>
 let NERDTreeWinSize=35
 
 Plugin 'scrooloose/nerdcommenter'
