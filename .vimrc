@@ -83,7 +83,7 @@ set expandtab
 "Correct indent config
 set si
 set noet
-set sw=4
+set sw=2
 
 nmap <F2> :<ESC>gT
 nmap <F3> :<ESC>gt
