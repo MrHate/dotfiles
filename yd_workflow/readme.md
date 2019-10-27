@@ -4,8 +4,8 @@
 
 略过有道API的申请，具体workflow的实现照搬了[这位博客大佬](https://www.cnblogs.com/flipped/p/9473701.html)的流程。
 
-- 补上了向Alfred输出结果时的基本释义项
-- 补上了请求参数`to`使其能够支持中译英，以及各种别的语言译成中文
+- 补上了向Alfred输出结果时的基本释义项使其支持各种语言译成中文
+- 补上了请求参数`to`使其能够在输入中文时自动译成英文
 
 ## 具体使用步骤
 1. 下载`yd.alfredworkflow`后导入Alfred
