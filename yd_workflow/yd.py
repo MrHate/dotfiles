@@ -12,7 +12,7 @@ def translate(wf):
     # 此处修改为你的应用密钥
     key = ''
     
-    query = u" ".join(sys.argv[1:])
+    query = " ".join(sys.argv[1:])
 
     salt = str(random.randint(1, 65536))
     sign = appKey + query + salt + key
