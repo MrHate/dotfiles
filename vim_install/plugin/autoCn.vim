@@ -17,7 +17,7 @@ function s:popUpKeywordCompletion()
 	if s:autocn_state && len(matchstr(strpart(getline('.'), 0, col('.') - 1), '\k*$')) > s:autocn_trigger_chars
 		let s:autocn_state=0
 		if !pumvisible()
-			"call feedkeys("\<C-n>",'t')
+			call feedkeys("\<C-n>",'tn')
 			return 1;
 	  endif
 	endif
@@ -25,3 +25,6 @@ function s:popUpKeywordCompletion()
 endfunction
 
 au TextChangedI * call s:popUpKeywordCompletion()
+
+inoremap <expr> <tab> pumvisible()?'<C-N>':'<C-I>'
+inoremap <expr> <S-tab> pumvisible()?'<C-P>':'<S-tab>'
