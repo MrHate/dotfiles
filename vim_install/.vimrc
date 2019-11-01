@@ -17,13 +17,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_confirm_extra_conf = 0
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-let g:ycm_goto_buffer_command = 'horizontal-split'
-nnoremap <Leader>g :YcmCompleter GoTo<CR>
+"Plugin 'Valloric/YouCompleteMe'
+"let g:ycm_min_num_of_chars_for_completion = 2
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_confirm_extra_conf = 0
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"let g:ycm_goto_buffer_command = 'horizontal-split'
+"nnoremap <Leader>g :YcmCompleter GoTo<CR>
 
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
@@ -42,6 +42,7 @@ Plugin 'mxw/vim-jsx'
 call vundle#end()
 filetype plugin indent on
 
+"repo: https://github.com/tomasr/molokai
 colorscheme molokai
 set background=dark
 let g:rehash256 = 1
@@ -88,5 +89,5 @@ set sw=2
 nmap <F2> :<ESC>gT
 nmap <F3> :<ESC>gt
 nmap <F4> :tabnew<CR>
-map <C-A> <C-W>
+"map <C-A> <C-W>
 "imap { {}<ESC>i<CR><ESC>O
