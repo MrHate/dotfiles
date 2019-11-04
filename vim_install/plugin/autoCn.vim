@@ -12,6 +12,8 @@ let s:autocn_trigger_chars = 2
 let s:autocn_state = 1
 
 set completeopt=menuone,noinsert,noselect
+" So confusing when searching files included
+set complete-=i
 
 function s:popUpKeywordCompletion()
 	if s:autocn_state && len(matchstr(strpart(getline('.'), 0, col('.') - 1), '\k*$')) > s:autocn_trigger_chars
