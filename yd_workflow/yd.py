@@ -28,11 +28,13 @@ def translate(wf):
 
     if res.get('translation'):
         ent = res['translation']
-        wf.add_item(title=u", ".join(ent),subtitle=u"基本释义")
+        basic_def = u",".join(ent)
+        wf.add_item(title=basic_def,subtitle=u"基本释义",valid=True,arg=basic_def)
         if res.get('web'):
             posts = res['web']
             for post in posts:
-                wf.add_item(title=u", ".join(post['value']), subtitle=post['key'])
+                web_def = u", ".join(post['value'])
+                wf.add_item(title=web_def, subtitle=post['key'],valid=True,arg=web_def)
     else:
         wf.add_item(title=u"No result", subtitle="errorCode:"+res["errorCode"])
 
