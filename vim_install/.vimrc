@@ -22,8 +22,9 @@ Plugin 'VundleVim/Vundle.vim'
 "let g:airline_theme='papercolor'
 
 Plugin 'The-NERD-tree'
-nmap <F1> :NERDTreeToggle<CR>
-imap <F1> <Esc>:NERDTreeToggle<CR>
+"nmap <F1> :NERDTreeToggle<CR>
+"imap <F1> <Esc>:NERDTreeToggle<CR>
+nn <F12> :NERDTreeToggle<CR>
 let NERDTreeWinSize=35
 
 Plugin 'scrooloose/nerdcommenter'
@@ -86,13 +87,16 @@ set sw=2
 "map <C-A> <C-W>
 "imap { {}<ESC>i<CR><ESC>O
 
+" prevent to trigger F1 help menu in accident
+inoremap <F1> <nop>
+
 " Fast tab select
-nn <F2> 1gt
-nn <F3> 2gt
-nn <F4> 3gt
-nn <F5> 4gt
-nn <F6> 5gt
-nn <F7> 6gt
-nn <F8> 7gt
-nn <F9> 8gt
-nn <F10> 9gt
+nn <F1> 1gt
+nn <F2> 2gt
+nn <F3> 3gt
+nn <F4> 4gt
+nn <F5> 5gt
+nn <F6> 6gt
+nn <F7> 7gt
+nn <F8> 8gt
+nn <F9> 9gt
