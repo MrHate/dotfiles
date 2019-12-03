@@ -1,4 +1,4 @@
-:" Configuration file for vim
+" Configuration file for vim
 set modelines=0		" CVE-2007-2438
 
 " Normally we use vim-extensions. If you want true vi-compatibility
@@ -17,14 +17,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_min_num_of_chars_for_completion = 2
-"let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_confirm_extra_conf = 0
-"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"let g:ycm_goto_buffer_command = 'horizontal-split'
-"nnoremap <Leader>g :YcmCompleter GoTo<CR>
-
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 "let g:airline_theme='papercolor'
@@ -39,10 +31,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+"Plugin 'rizzatti/dash.vim'
+
 call vundle#end()
 filetype plugin indent on
 
-"repo: https://github.com/tomasr/molokai
 colorscheme molokai
 set background=dark
 let g:rehash256 = 1
@@ -56,14 +49,15 @@ set clipboard=unnamed
 set is
 "set hls
 
-"" 当光标一段时间保持不动了，就禁用高亮
-"autocmd cursorhold * set nohlsearch
-"" 当输入查找命令时，再启用高亮
-"noremap n :set hlsearch<cr>n
-"noremap N :set hlsearch<cr>N
-"noremap / :set hlsearch<cr>/
-"noremap ? :set hlsearch<cr>?
-"noremap * *:set hlsearch<cr>
+" Control highlight for searching
+autocmd cursorhold * set nohlsearch
+"nmap <silent> <esc> :set nohlsearch<cr>
+"noremap <silent> <esc> :<esc>set nohlsearch<cr>
+noremap n :set hlsearch<cr>n
+noremap N :set hlsearch<cr>N
+noremap / :set hlsearch<cr>/
+noremap ? :set hlsearch<cr>?
+noremap * *:set hlsearch<cr>
 
 "Syntax for .yaml and .yml
 "source file: https://www.vim.org/scripts/script.php?script_id=739 
@@ -86,8 +80,19 @@ set si
 set noet
 set sw=2
 
-nmap <F2> :<ESC>gT
-nmap <F3> :<ESC>gt
-nmap <F4> :tabnew<CR>
+"nmap <F2> :<ESC>gT
+"nmap <F3> :<ESC>gt
+"nmap <F4> :tabnew<CR>
 "map <C-A> <C-W>
 "imap { {}<ESC>i<CR><ESC>O
+
+" Fast tab select
+nn <F2> 1gt
+nn <F3> 2gt
+nn <F4> 3gt
+nn <F5> 4gt
+nn <F6> 5gt
+nn <F7> 6gt
+nn <F8> 7gt
+nn <F9> 8gt
+nn <F10> 9gt
