@@ -34,13 +34,22 @@ Plugin 'mxw/vim-jsx'
 
 "Plugin 'rizzatti/dash.vim'
 
+Plugin 'mileszs/ack.vim'
+let g:ackprg = 'ag --vimgrep'
+
+Plugin 'morhetz/gruvbox'
+
 call vundle#end()
 filetype plugin indent on
 
-colorscheme molokai
+colorscheme gruvbox
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="hard"
 set background=dark
-let g:rehash256 = 1
-let g:molokai_original = 1
+
+"colorscheme molokai
+"let g:rehash256 = 1
+"let g:molokai_original = 1
 
 syntax enable
 set ruler
@@ -73,13 +82,11 @@ autocmd BufRead,BufNewFile *.vue setfiletype html
 "set mouse=a
 set nocp
 set number
-set ts=2
-set expandtab
+set ts=2 sw=2 expandtab
 
 "Correct indent config
 set si
 set noet
-set sw=2
 
 "nmap <F2> :<ESC>gT
 "nmap <F3> :<ESC>gt
@@ -100,3 +107,6 @@ nn <F6> 6gt
 nn <F7> 7gt
 nn <F8> 8gt
 nn <F9> 9gt
+nn <F10> :tabnew<CR>
+" <F11> is used by MacOS to view desktop
+" <F12> is used to trigger NerdTree
