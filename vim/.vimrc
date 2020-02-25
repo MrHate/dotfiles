@@ -37,15 +37,19 @@ Plugin 'mxw/vim-jsx'
 Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --vimgrep'
 
-Plugin 'morhetz/gruvbox'
+"Plugin 'morhetz/gruvbox'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
 
-colorscheme gruvbox
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="hard"
 set background=dark
+colorscheme solarized
+
+"colorscheme gruvbox
+"let g:gruvbox_italic=1
+"let g:gruvbox_contrast_dark="hard"
+"set background=dark
 
 "colorscheme molokai
 "let g:rehash256 = 1
