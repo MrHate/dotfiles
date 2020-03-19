@@ -26,18 +26,13 @@ Plugin 'The-NERD-tree'
 "imap <F1> <Esc>:NERDTreeToggle<CR>
 nn <F12> :NERDTreeToggle<CR>
 let NERDTreeWinSize=35
+let g:NERDTreeQuitOnOpen = 1
 
 Plugin 'scrooloose/nerdcommenter'
-
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
-"Plugin 'rizzatti/dash.vim'
 
 Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --vimgrep'
 
-"Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
@@ -45,15 +40,6 @@ filetype plugin indent on
 
 set background=dark
 colorscheme solarized
-
-"colorscheme gruvbox
-"let g:gruvbox_italic=1
-"let g:gruvbox_contrast_dark="hard"
-"set background=dark
-
-"colorscheme molokai
-"let g:rehash256 = 1
-"let g:molokai_original = 1
 
 syntax enable
 set ruler
@@ -84,9 +70,6 @@ autocmd BufRead,BufNewFile *.vue setfiletype html
 "autocmd BufRead,BufNewFile *.cc setfiletype cpp
 
 "set mouse=a
-set nocp
-set number
-set ts=2 sw=2 expandtab
 
 "Correct indent config
 set si
@@ -114,3 +97,7 @@ nn <F9> 9gt
 nn <F10> :tabnew<CR>
 " <F11> is used by MacOS to view desktop
 " <F12> is used to trigger NerdTree
+
+set nocp
+set number
+set tabstop=2 shiftwidth=2 expandtab
