@@ -34,12 +34,22 @@ Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --vimgrep'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
 call vundle#end()
 filetype plugin indent on
 
+"colorscheme solarized
+
+colorscheme onehalfdark
 set background=dark
-colorscheme solarized
+set t_Co=256
+set cursorline
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 syntax enable
 set ruler
