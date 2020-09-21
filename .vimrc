@@ -6,7 +6,7 @@
 call plug#begin()
 
 Plug 'preservim/nerdtree'
-nn <C-X><C-A> :NERDTreeToggle<CR>
+nn <silent><C-X><C-A> :NERDTreeToggle<CR>
 let NERDTreeWinSize=35
 let g:NERDTreeQuitOnOpen=1
 
@@ -25,9 +25,16 @@ inoremap <C-N> <C-O>j
 inoremap <C-P> <C-O>k
 inoremap <C-F> <C-O>l
 inoremap <C-B> <C-O>h
+inoremap <C-F> <C-O>l
+inoremap <C-B> <C-O>h
 nn <C-A> I
 nn <C-E> A
 nn <C-Y> p
+nn <C-N> j
+nn <C-P> k
+nn <C-F> l
+nn <C-B> h
+nn <C-X><C-F> :e 
 
 " Headache when touching F1 by mistake
 inoremap <F1> <nop>
