@@ -27,6 +27,7 @@ inoremap <C-F> <C-O>l
 inoremap <C-B> <C-O>h
 inoremap <C-F> <C-O>l
 inoremap <C-B> <C-O>h
+inoremap <C-O> <C-O>O
 nn <C-A> I
 nn <C-E> A
 nn <C-Y> p
@@ -37,8 +38,21 @@ nn <C-B> h
 nn <C-X><C-F> :e 
 
 " Headache when touching F1 by mistake
-inoremap <F1> <nop>
 nn <F1> <nop>
+inoremap <F1> <nop>
+
+" Another tiresome from Macbook touchbar
+inoremap <F2> <nop>
+inoremap <F3> <nop>
+inoremap <F4> <nop>
+inoremap <F5> <nop>
+inoremap <F6> <nop>
+inoremap <F7> <nop>
+inoremap <F8> <nop>
+inoremap <F9> <nop>
+inoremap <F10> <nop>
+inoremap <F11> <nop>
+inoremap <F12> <nop>
 
 " Modes
 syntax enable
