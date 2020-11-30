@@ -36,6 +36,9 @@ nn <C-P> k
 nn <C-F> l
 nn <C-B> h
 nn <C-X><C-F> :e 
+" Uncheck 'Use Option as Meta key' first
+inoremap ƒ <C-O>e
+inoremap ∫ <C-O>b
 
 " Headache when touching F1 by mistake
 nn <F1> <nop>
@@ -53,6 +56,11 @@ inoremap <F9> <nop>
 inoremap <F10> <nop>
 inoremap <F11> <nop>
 inoremap <F12> <nop>
+
+" Chinese input replacement
+inoremap · `
+inoremap （ (
+inoremap ） )
 
 " Modes
 syntax enable
