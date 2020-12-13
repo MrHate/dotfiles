@@ -17,7 +17,7 @@ let g:NERDCompactSexyComs=1
 call plug#end()
 
 " Emacs sequelae
-inoremap <C-A> <C-O>0
+inoremap <C-A> <C-O>I
 inoremap <C-E> <C-O>$
 inoremap <C-Y> <C-O>p
 inoremap <C-D> <C-O>x
@@ -29,16 +29,18 @@ inoremap <C-F> <C-O>l
 inoremap <C-B> <C-O>h
 inoremap <C-O> <C-O>O
 nn <C-A> I
-nn <C-E> A
-nn <C-Y> p
 nn <C-N> j
 nn <C-P> k
-nn <C-F> l
 nn <C-B> h
-nn <C-X><C-F> :e 
-" Uncheck 'Use Option as Meta key' first
+" Uncheck 'Use Option as Meta key' first (for macOS)
 inoremap ƒ <C-O>e
 inoremap ∫ <C-O>b
+inoremap ˘ <C-O>G<C-O>$
+inoremap ¯ <C-O>gg<C-O>0
+nn ƒ e
+nn ∫ b
+nn ˘ G$
+nn ¯ gg0
 
 " Headache when touching F1 by mistake
 nn <F1> <nop>
