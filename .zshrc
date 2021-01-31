@@ -20,4 +20,4 @@ PS1='%F{green}%n@%m:%F{blue}%~%F{red}$(git_prompt)%f%# '
 alias l='ls -CFG'
 alias la='ls -AG'
 alias ll='ls -alFG'
-
+alias ve='nvim'

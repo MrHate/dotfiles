@@ -57,10 +57,13 @@ set nocp nowrap
 set ruler number showmode
 set is
 set tabstop=2 shiftwidth=2 expandtab
+if(has('nvim'))
+  set laststatus=0
+  set guicursor="\<Esc>[3 q"
+endif
 
 " bridge between clipboards of macOS and vim
 set clipboard=unnamed
 
 " line number color
 highlight LineNr ctermfg=grey
-
