@@ -14,6 +14,19 @@ Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims=1
 let g:NERDCompactSexyComs=1
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete-clangx'
+  let g:deoplete#enable_at_startup = 1
+
+  " Completion relevant configurations
+  set completeopt-=preview
+  inoremap <expr> <TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
+  inoremap <expr> <S-TAB> pumvisible() ? "\<C-P>" : ""
+  inoremap <expr> <ESC> pumvisible() ? "\<ESC>\<ESC>" : "\<ESC>"
+
+endif
+
 call plug#end()
 
 " Emacs sequelae
@@ -62,8 +75,11 @@ if(has('nvim'))
   set guicursor="\<Esc>[3 q"
 endif
 
-" bridge between clipboards of macOS and vim
+" Bridge between clipboards of macOS and vim
 set clipboard=unnamed
 
-" line number color
-highlight LineNr ctermfg=grey
+" Colors
+hi LineNr ctermfg=grey
+hi Comment ctermfg=22
+hi Pmenu ctermbg=darkgrey ctermfg=black 
+hi PmenuSel ctermbg=lightgrey ctermfg=black
