@@ -14,18 +14,10 @@ Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims=1
 let g:NERDCompactSexyComs=1
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/deoplete-clangx'
-  let g:deoplete#enable_at_startup = 1
-
-  " Completion relevant configurations
-  set completeopt-=preview
-  inoremap <expr> <TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
-  inoremap <expr> <S-TAB> pumvisible() ? "\<C-P>" : ""
-  inoremap <expr> <ESC> pumvisible() ? "\<ESC>\<ESC>" : "\<ESC>"
-
-endif
+"   set completeopt-=preview
+"   inoremap <expr> <TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
+"   inoremap <expr> <S-TAB> pumvisible() ? "\<C-P>" : ""
+"   inoremap <expr> <ESC> pumvisible() ? "\<ESC>\<ESC>" : "\<ESC>"
 
 call plug#end()
 
@@ -41,6 +33,10 @@ inoremap <C-B> <C-O>h
 inoremap <C-F> <C-O>l
 inoremap <C-B> <C-O>h
 inoremap <C-O> <C-O>O
+nn <C-N> gj
+nn <C-P> gk
+vn <C-N> gj
+vn <C-P> gk
 
 " Headache when touching F1 by mistake
 nn <F1> <nop>
