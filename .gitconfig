@@ -1,0 +1,18 @@
+[user]
+ name = MrHate
+ email = gydeng0@gmail.com
+
+[alias]
+ co = checkout
+ ci = commit
+ st = status
+ br = branch
+
+[core]
+ excludesfile = ~/.gitignore
+ editor = vim
+
+[http "https://github.com"]
+ proxy = socks5://127.0.0.1:1080
+[https "https://github.com"]
+ proxy = socks5://127.0.0.1:1080
