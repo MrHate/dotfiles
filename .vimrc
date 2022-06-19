@@ -1,8 +1,7 @@
-" ==================
-" .vimrc
-" ==================
-
-" Plugins installed by vim-plug(https://github.com/junegunn/vim-plug)
+" Start of plugin installation
+" ======================================================
+" Plugins installed by vim-plug
+" https://github.com/junegunn/vim-plug
 call plug#begin()
 
 Plug 'preservim/nerdtree'
@@ -14,12 +13,17 @@ Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims=1
 let g:NERDCompactSexyComs=1
 
+Plug 'sheerun/vim-polyglot'
+Plug 'sickill/vim-monokai'
+
 "   set completeopt-=preview
 "   inoremap <expr> <TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
 "   inoremap <expr> <S-TAB> pumvisible() ? "\<C-P>" : ""
 "   inoremap <expr> <ESC> pumvisible() ? "\<ESC>\<ESC>" : "\<ESC>"
 
 call plug#end()
+" End of plugin installation
+" ======================================================
 
 " Emacs sequelae
 inoremap <C-A> <C-O>I
@@ -38,27 +42,9 @@ nn <C-P> gk
 vn <C-N> gj
 vn <C-P> gk
 
-" Headache when touching F1 by mistake
-nn <F1> <nop>
-inoremap <F1> <nop>
-
-" Another tiresome from Macbook touchbar
-inoremap <F2> <nop>
-inoremap <F3> <nop>
-inoremap <F4> <nop>
-inoremap <F5> <nop>
-inoremap <F6> <nop>
-inoremap <F7> <nop>
-inoremap <F8> <nop>
-inoremap <F9> <nop>
-inoremap <F10> <nop>
-inoremap <F11> <nop>
-inoremap <F12> <nop>
-
-" Chinese input replacement
-inoremap · `
-inoremap （ (
-inoremap ） )
+" Search highlight and clear
+set hls
+nn <silent><C-K> :let @/ = ""<CR>
 
 " Modes
 syntax enable
@@ -71,7 +57,7 @@ if(has('nvim'))
   set guicursor="\<Esc>[3 q"
 endif
 
-" Bridge between clipboards of macOS and vim
+" Connect to the clipboard of macOS
 set clipboard=unnamed
 
 " Colors
@@ -79,3 +65,6 @@ hi LineNr ctermfg=grey
 hi Comment ctermfg=22
 hi Pmenu ctermbg=darkgrey ctermfg=black 
 hi PmenuSel ctermbg=lightgrey ctermfg=black
+
+" Theme
+colorscheme monokai
