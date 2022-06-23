@@ -14,7 +14,7 @@ let g:NERDSpaceDelims=1
 let g:NERDCompactSexyComs=1
 
 Plug 'sheerun/vim-polyglot'
-Plug 'sickill/vim-monokai'
+Plug 'joshdick/onedark.vim'
 
 "   set completeopt-=preview
 "   inoremap <expr> <TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
@@ -60,11 +60,13 @@ endif
 " Connect to the clipboard of macOS
 set clipboard=unnamed
 
+" Theme
+colorscheme onedark
+
 " Colors
 hi LineNr ctermfg=grey
-hi Comment ctermfg=22
+" hi Comment ctermfg=22
 hi Pmenu ctermbg=darkgrey ctermfg=black 
 hi PmenuSel ctermbg=lightgrey ctermfg=black
-
-" Theme
-colorscheme monokai
+hi TabLine ctermbg=grey
+hi TabLineSel ctermbg=darkgrey
