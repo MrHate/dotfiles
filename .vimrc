@@ -1,18 +1,3 @@
-" Plugin installation (require https://github.com/junegunn/vim-plug)
-call plug#begin()
-Plug 'scrooloose/nerdcommenter'
-Plug 'sickill/vim-monokai'
-call plug#end()
-
-" Plugin configurations
-" ==================================================================
-" nerdcommenter
-let g:NERDSpaceDelims=1
-let g:NERDCompactSexyComs=1
-
-" ==================================================================
-" End of plugin configurations
-
 " Netrw cfg
 nn <silent><C-X><C-A> :Lex<CR>
 let g:netrw_banner = 0
@@ -43,7 +28,7 @@ vn <C-P> gk
 set hls
 nn <silent><C-K> :let @/ = ""<CR>
 
-" Modes
+" Flags
 syntax enable
 set nocp nowrap
 set ruler number showmode
@@ -65,6 +50,3 @@ hi LineNr ctermfg=grey
 hi Comment ctermfg=22
 hi Pmenu ctermbg=darkgrey ctermfg=black 
 hi PmenuSel ctermbg=lightgrey ctermfg=black
-
-" Theme
-colorscheme monokai
