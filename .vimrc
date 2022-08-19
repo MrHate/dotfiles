@@ -1,18 +1,11 @@
 " Plugin installation (require https://github.com/junegunn/vim-plug)
 call plug#begin()
-Plug 'preservim/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sickill/vim-monokai'
 call plug#end()
 
 " Plugin configurations
 " ==================================================================
-
-" nerdtree
-nn <silent><C-X><C-A> :NERDTreeToggle<CR>
-let NERDTreeWinSize=35
-let g:NERDTreeQuitOnOpen=1
-
 " nerdcommenter
 let g:NERDSpaceDelims=1
 let g:NERDCompactSexyComs=1
@@ -20,6 +13,14 @@ let g:NERDCompactSexyComs=1
 " ==================================================================
 " End of plugin configurations
 
+" Netrw cfg
+nn <silent><C-X><C-A> :Lex<CR>
+let g:netrw_banner = 0
+let g:netrw_winsize = 24
+aug netrw_autoclose
+  au! WinLeave * if getbufvar(winbufnr(winnr()), "&filetype") == "netrw"|q|endif
+  au! WinEnter * if getbufvar(winbufnr(winnr('#')), "&filetype") == "netrw"|call feedkeys("\<c-w>=")|endif
+aug END
 
 " Emacs sequelae
 inoremap <C-A> <C-O>I
@@ -48,6 +49,7 @@ set nocp nowrap
 set ruler number showmode
 set is
 set tabstop=2 shiftwidth=2 expandtab
+set tw=0
 
 if(has('nvim'))
   set laststatus=0
