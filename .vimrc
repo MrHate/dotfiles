@@ -1,29 +1,25 @@
-" Start of plugin installation
-" ======================================================
-" Plugins installed by vim-plug
-" https://github.com/junegunn/vim-plug
+" Plugin installation (require https://github.com/junegunn/vim-plug)
 call plug#begin()
-
 Plug 'preservim/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'sickill/vim-monokai'
+call plug#end()
+
+" Plugin configurations
+" ==================================================================
+
+" nerdtree
 nn <silent><C-X><C-A> :NERDTreeToggle<CR>
 let NERDTreeWinSize=35
 let g:NERDTreeQuitOnOpen=1
 
-Plug 'scrooloose/nerdcommenter'
+" nerdcommenter
 let g:NERDSpaceDelims=1
 let g:NERDCompactSexyComs=1
 
-Plug 'sheerun/vim-polyglot'
-Plug 'joshdick/onedark.vim'
+" ==================================================================
+" End of plugin configurations
 
-"   set completeopt-=preview
-"   inoremap <expr> <TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
-"   inoremap <expr> <S-TAB> pumvisible() ? "\<C-P>" : ""
-"   inoremap <expr> <ESC> pumvisible() ? "\<ESC>\<ESC>" : "\<ESC>"
-
-call plug#end()
-" End of plugin installation
-" ======================================================
 
 " Emacs sequelae
 inoremap <C-A> <C-O>I
@@ -52,21 +48,21 @@ set nocp nowrap
 set ruler number showmode
 set is
 set tabstop=2 shiftwidth=2 expandtab
+
 if(has('nvim'))
   set laststatus=0
   set guicursor="\<Esc>[3 q"
 endif
 
-" Connect to the clipboard of macOS
-set clipboard=unnamed
-
-" Theme
-colorscheme onedark
+if(has('clipboard'))
+  set clipboard=unnamedplus
+endif
 
 " Colors
 hi LineNr ctermfg=grey
-" hi Comment ctermfg=22
+hi Comment ctermfg=22
 hi Pmenu ctermbg=darkgrey ctermfg=black 
 hi PmenuSel ctermbg=lightgrey ctermfg=black
-hi TabLine ctermbg=grey
-hi TabLineSel ctermbg=darkgrey
+
+" Theme
+colorscheme monokai
